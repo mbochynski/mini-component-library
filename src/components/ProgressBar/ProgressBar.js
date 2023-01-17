@@ -58,7 +58,7 @@ const Progress = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 4px;
-  clip-path: inset(0 100% 0px ${(p) => p.value}%);
+  clip-path: inset(0 ${(p) => 100 - p.value}% 0 0);
 `;
 
 export default ProgressBar;
