@@ -27,10 +27,13 @@ const ProgressBar = ({ value, size }) => {
   return (
     <div>
       <ProgressValue>{value}%</ProgressValue>
-      <VisuallyHidden>
-        <progress value={value} max={100}></progress>
-      </VisuallyHidden>
-      <ProgressWrapper style={sizes[size]}>
+      <ProgressWrapper
+        style={sizes[size]}
+        role="progressbar"
+        aria-valuenow={value}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
         <Progress value={value}></Progress>
       </ProgressWrapper>
     </div>
