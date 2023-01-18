@@ -9,14 +9,18 @@ import VisuallyHidden from "../VisuallyHidden";
 const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   return (
     <div>
-      <label>
+      <Label>
         <VisuallyHidden>{label}</VisuallyHidden>
         <StyledIcon id={icon} />
-        <Input placeholder={placeholder} type="text"></Input>
-      </label>
+        <Input placeholder={placeholder} type="text" width={width}></Input>
+      </Label>
     </div>
   );
 };
+
+const Label = styled.label`
+  position: relative;
+`;
 
 const StyledIcon = styled(Icon)`
   position: absolute;
@@ -26,6 +30,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 const Input = styled.input`
+  width: ${(p) => p.width + "px"};
   padding: 10px;
   padding-left: 10px;
   padding-left: 40px;
